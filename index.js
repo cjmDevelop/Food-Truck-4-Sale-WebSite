@@ -24,8 +24,9 @@ loader.load( 'public/foodtruck.glb', function ( gltf ) {
 
 	scene.add(model);
 
-    camera.position.z = 1.5;
+    camera.position.z = 1.3;
     camera.position.y = 0.8;
+    camera.position.x = -1;
    
 }, undefined, function ( error ) {
 	console.error( error );
