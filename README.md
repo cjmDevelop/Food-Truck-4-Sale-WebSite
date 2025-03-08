@@ -1,0 +1,11 @@
+# Food Truck 4 Sale Website - HTML, CSS, Three.JS
+A simple website for an independent Food Truck creator & seller.
+
+# three.js
+npm install --save three
+
+# vite
+npm install --save-dev vite
+
+# From your terminal, run:
+npx vite
