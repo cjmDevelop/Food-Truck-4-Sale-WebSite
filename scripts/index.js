@@ -17,13 +17,9 @@ renderer.setSize( window.innerWidth , window.innerHeight  );
 document.getElementById('three-container').appendChild(renderer.domElement);
 
 
-
-loader.load( 'public/foodtruck.glb', function ( gltf ) {
+loader.load( '/foodtruck.glb', function ( gltf ) {
     const model = gltf.scene;
-  
-
 	scene.add(model);
-
     camera.position.z = 1.3;
     camera.position.y = 0.8;
     camera.position.x = -1;
@@ -31,7 +27,6 @@ loader.load( 'public/foodtruck.glb', function ( gltf ) {
 }, undefined, function ( error ) {
 	console.error( error );
 } );
-
 
 function animate() {
 	renderer.render( scene, camera );
