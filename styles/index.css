@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root{
- --clear-line: #e3e3e3d2;
- --link-color: #929292;
+
+:root {
+    --clear-line: #e3e3e3d2;
+    --link-color: #929292;
 }
-*{
- padding: 0;
- margin: 0;
+
+* {
+    padding: 0;
+    margin: 0;
 }
-html{
-  height: 100vh;
-  width: 100vw;
+
+html {
+    height: 100vh;
+    width: 100vw;
 }
-body{
+
+body {
     height: 100%;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-       
+
 }
-nav{
-    padding: 1.6rem;   
+
+nav {
+    padding: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,28 +36,33 @@ nav{
     background-color: white;
     opacity: 1;
 }
-nav a{
+
+nav a {
     margin: 0 3%;
     text-decoration: none;
-    color: var(--link-color); 
+    color: var(--link-color);
 }
-nav a:hover{
+
+nav a:hover {
     color: black;
 }
-nav a.active{
+
+nav a.active {
     color: black;
 }
-main{
+
+main {
     display: flex;
     margin-top: 4%;
     margin-bottom: 4%;
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 1000; 
+    z-index: 1000;
     /* border: 4px solid goldenrod; */
 }
-main #two-d{
+
+main #two-d {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -66,26 +76,29 @@ main #two-d{
     margin-bottom: 20%;
 }
 
- main #three-d{
+main #three-d {
     width: 50%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 50%;
     top: 0%;
     /* border: 4px solid cadetblue; */
+
+    z-index: 500;
 }
+
 @media(max-width: 1500px) {
 
-    main #three-d{
+    main #three-d {
         top: 25%;
         left: 25%;
         margin-top: 20%;
     }
 
-    main #two-d{
+    main #two-d {
         width: 100%;
         text-align: center;
         display: flex;
@@ -94,28 +107,48 @@ main #two-d{
     }
 
 }
-@media(max-width: 1220px){
-    main #three-d{
-        top: 40%;
-    }
-}
-@media(max-width: 820px){
-    main #three-d{
-        top: 100%;
+
+@media(max-width: 1220px) {
+    main #three-d {
+        top: 25%;
     }
 }
 
-main #two-d h1{
-    font-size: 5rem; 
+@media(max-width: 1115px) {
+    main #three-d {
+        top: 45%;
+    }
 }
 
-h1 + p{
+@media(max-width: 859px) {
+    main #three-d {
+        top: 55%;
+    }
+}
+
+@media(max-width: 820px) {
+    main #three-d {
+        top: 65%;
+    }
+}
+
+@media(max-width: 567px) {
+    main #three-d {
+        top: 70%;
+    }
+}
+
+main #two-d h1 {
+    font-size: 5rem;
+}
+
+h1+p {
     width: 75%;
     margin: 35px auto;
     font-size: large;
 }
 
-#cta-button{
+#cta-button {
     text-transform: uppercase;
     background: rgb(36, 36, 36);
     text-decoration: none;
@@ -124,50 +157,20 @@ h1 + p{
     font-weight: 600;
     border-radius: 1000px;
     transition: 150ms ease;
-    font-size:large;
+    font-size: large;
     z-index: 1000;
 }
 
-#cta-button:hover{
+#cta-button:hover {
     scale: 1.1;
 }
 
-footer{
+/* footer{
     padding: 1.5rem;
     border-top: 2px solid var(--clear-line);
     background-color: rgb(197, 197, 197);
-    z-index: 10000;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    position: absolute;
+    z-index: 10000; 
+    bottom: 0;
+    width: 100%;
+} */
