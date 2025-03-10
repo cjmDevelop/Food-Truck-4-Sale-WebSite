@@ -21,10 +21,18 @@ loader.load( '/foodtruck.glb', function ( gltf ) {
     camera.position.z = 1.3;
     camera.position.y = 0.8;
     camera.position.x = -1;
-   
 }, undefined, function ( error ) {
 	console.error( error );
 } );
+
+function onWindowResize(){
+    // camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  
+}
+
+window.addEventListener('resize', onWindowResize, false);
 
 function animate() {
 	renderer.render( scene, camera );
