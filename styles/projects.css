@@ -1,136 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{ 
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
-text-align: center;
-font-family: Poppins, 'segoe UI', sans-serif;
+html {
+    text-align: center;
+    font-family: Poppins, 'segoe UI', sans-serif;
 }
 
-nav{
+nav {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 25px;
-    border-bottom: 2px solid #e3e3e3; 
+    border-bottom: 2px solid #e3e3e3;
+    background-color: white;
+    opacity: 1;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: #929292;
     margin: 0 20px;
 }
 
-nav a:hover{
+nav a:hover {
     color: black;
 }
 
-nav a.active{
+nav a.active {
     color: black;
 }
 
-header{
-    padding-top: calc(50px + 1rem + 2px);
+header {
+    padding-top: 50px;
 }
 
-h1{
+h1 {
     margin-top: 100px;
     font-size: 3.75rem;
     font-weight: bold;
     line-height: 1.2em;
 }
 
-h1 + p{
-   width: 800px; 
-   margin: 35px auto;
+h1+p {
+    width: 800px;
+    margin: 35px auto;
 }
 
 
-.products-container{
+.products-container {
     margin-top: 30px;
 }
 
-.item{
+.item {
     box-sizing: border-box;
-    width: 325px;
-    height: 250px;
+    width: 500px;
+    height: auto;
     display: inline-block;
     margin: 0 20px;
     margin-bottom: 20px;
     align-content: center;
     padding: 20px;
     border-radius: 30px;
+    text-align: center;
 }
 
-.item > h2{
-    margin-bottom: 10px;
+h2 {
+    margin: 0;
+    padding: 0;
 }
 
-.item:first-child{
-    border: 3px solid black;
+.item:first-child {
+    color: rgb(0, 0, 0);
 }
 
-.item:nth-child(2){
-    background-color: #7932ff;
-    color: white;
+.item:nth-child(2) {
+    color: rgb(0, 0, 0);
 }
 
-.item:last-child{
-    background-color: black;
-    color: white;
+.item:last-child {
+    color: rgb(0, 0, 0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+img {
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+}
