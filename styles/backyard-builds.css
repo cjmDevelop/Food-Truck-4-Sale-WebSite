@@ -96,8 +96,8 @@ h2 {
 }
 
 img {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%px;
     border-radius: 30px;
 }
 
@@ -124,4 +124,10 @@ border: 4px solid blue;
 
 #title1{
     font-size: 3rem;
+}
+
+.main-info {
+    text-align: start;
+    list-style-type: none;
+    padding: 3%;
 }
