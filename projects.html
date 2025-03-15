@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles/projects.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+          }
+        }
+      </script>
 </head>
 <body>
     <nav>
@@ -17,21 +25,24 @@
         <h1>Projects</h1>
         <div class="products-container">
             <div class="item">
-                <img class="fill" src="/IMG_1214.JPEG" alt="Food Truck of 2025">
+                <div id="first_model"></div>
                 <h2>1997 FrieghtLiner</h2>
                 <p> Rebuilt in 2025, available now!</p>
             </div>
             <div class="item">
-                <img src="/2024 Food Truck/00.jpg">
+                <div id="middle_model"></div>
                 <h2>2002 WorkHorse P42</h2>
                 <p>Rebuilt & sold in 2024</p>
             </div>
             <div class="item">
-                <img src="/2023 SilverSpoonPics/silverspoon_Aunt_Annette.png">
+                 <div id="silverspoon_model"></div>
                 <h2>1999 The Silver Spoon</h2>
                 <p>Rebuilt & sold in 2023</p>
             </div>
         </div>
     </header>
+    <script type="module" src="scripts/projects.js"></script>
+    <script type="module" src="scripts/projects_middle.js"></script>
+    <script type="module" src="scripts/projects_silverspoon.js"></script>
 </body>
 </html>
