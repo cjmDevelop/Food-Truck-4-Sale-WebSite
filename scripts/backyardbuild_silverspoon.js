@@ -13,14 +13,14 @@ controls.dampingFactor = 0.03;
 
 renderer.setClearColor(0x000000, 0);
 renderer.setSize( window.innerWidth / 4, window.innerHeight / 4 );
-document.getElementById('first_model').appendChild(renderer.domElement);
+document.getElementById('silverspoon_model').appendChild(renderer.domElement);
 
-loader.load( '/foodtruck.glb', function ( gltf ) {
+loader.load( '/silverspoon.glb', function ( gltf ) {
     const model = gltf.scene;
     scene.add(model);
-    camera.position.z = 1.3;
-    camera.position.y = 0.8;
-    camera.position.x = -1;
+    camera.position.z = 0;
+    camera.position.y = 0.5;
+    camera.position.x = 2;
 }, undefined, function ( error ) {
     console.error( error );
 });
