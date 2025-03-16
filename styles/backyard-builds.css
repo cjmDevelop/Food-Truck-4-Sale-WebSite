@@ -168,6 +168,9 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .top-right {
+        display: none;
+    }
     
   }
   
