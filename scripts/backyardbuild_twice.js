@@ -12,8 +12,8 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 
 renderer.setClearColor(0x000000, 0);
-renderer.setSize( window.innerWidth / 4, window.innerHeight / 4 );
-document.getElementById('first_model_twice').appendChild(renderer.domElement);
+renderer.setSize( window.innerWidth / 3, window.innerHeight / 2 );
+document.getElementById('2025-3dmodel-twice').appendChild(renderer.domElement);
 
 loader.load( '/foodtruck.glb', function ( gltf ) {
     const model = gltf.scene;
