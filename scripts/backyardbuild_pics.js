@@ -23,8 +23,8 @@ const imageSources = [
     '/2025_FoodTruckPics/IMG_1234.JPEG',
     '/2025_FoodTruckPics/IMG_1235.JPEG',
     '/2025_FoodTruckPics/IMG_1236.JPEG',
-    
 ];
+
 
 // Set the initial image to be shown (same as the first thumbnail initially)
 let currentIndex = 0;

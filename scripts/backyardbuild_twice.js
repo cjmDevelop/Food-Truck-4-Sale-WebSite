@@ -11,16 +11,20 @@ const loader = new GLTFLoader();
 controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 
-renderer.setClearColor(0x000000, 0);
-renderer.setSize( window.innerWidth / 3, window.innerHeight / 2 );
+// renderer.setClearColor(0x000000, 0);
+renderer.setSize( window.innerWidth / 2, window.innerHeight / 2 );
 document.getElementById('2025-3dmodel-twice').appendChild(renderer.domElement);
 
 loader.load( '/foodtruck.glb', function ( gltf ) {
     const model = gltf.scene;
     scene.add(model);
-    camera.position.z = 1.3;
-    camera.position.y = 0.8;
-    camera.position.x = -1;
+
+    // model.rotation.y = Math.PI;
+
+    camera.position.z = -0.3;
+    camera.position.y = 0.6;
+    camera.position.x = -1.6;
+    
 }, undefined, function ( error ) {
     console.error( error );
 });
