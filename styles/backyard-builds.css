@@ -74,7 +74,7 @@ h1 {
     width: 500px;
     height: auto;
     margin: 0 20px;
- 
+
     align-content: center;
 
     border-radius: 30px;
@@ -101,121 +101,96 @@ a {
     list-style-type: none;
 }
 
-
-
-
-
-
-
-
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;  
-    grid-template-rows: 1fr 1fr;  
-    gap: 10px;  
-  }
-  
-  .top-left {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.top-left {
     background-color: lightblue;
     padding: 20px;
-  }
-  
-  .top-right {
+}
+
+.top-right {
     background-color: lightgreen;
     padding: 20px;
-  }
+}
 
-  .top-right img {
-    max-width: 100%;
-    height: auto;
-  }
+.top-right img {
+    width: 100%;      
+    height: 675px;  
+    object-fit: cover; 
+}
 
-  .thumbnail-gallery {
+.thumbnail-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     gap: 10px;
 }
 
-.thumbnail{
+.thumbnail {
     width: 100%;
-    aspect-ratio: 1; 
+    aspect-ratio: 1;
     border-radius: 8px;
     object-fit: cover;
+    cursor: pointer;
 }
-  
-  .bottom-left {
+
+.bottom-left {
     background-color: lightcoral;
     padding: 20px;
-  }
-  
-  .bottom-right {
+}
+
+.bottom-right {
     background-color: lightgoldenrodyellow;
     padding: 20px;
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
 
     body {
         padding-top: 100px;
     }
 
     .grid-container {
-      grid-template-columns: 1fr; 
-      grid-template-rows: auto;  
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 
     .thumbnail-gallery {
-        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+
+        visibility: hidden;
+    }
+
+    .thumbnail {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        object-fit: cover;
+        cursor: pointer;
     }
 
     .top-right {
-        display: none;
+        display: block;
+        padding: 0;
+        margin-top: 10px;
     }
-    
-  }
-  
 
+    .top-right img {
+        display: block;
+        margin: 0 auto;
+    }
 
+    .thumbnail-gallery img {
+        transition: transform 0.3s ease;
+    }
 
+    .top-left {
+        padding: 0;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
