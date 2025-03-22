@@ -141,7 +141,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 500px;
     position: absolute;
-    left: 5%
+    left: 6%
 }
 
 #main-grid-child-left-foodtruck-2025 {
@@ -162,7 +162,7 @@ main {
     border-bottom-right-radius: 8px;
     background-color: rgb(45, 45, 45);
     width: 39%;
-    height: 180%;
+    height: 183.3%;
     position: absolute;
     right: 6.7%;
     color: white;
