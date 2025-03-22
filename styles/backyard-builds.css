@@ -132,60 +132,58 @@ header h1 {
 main {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-
     position: relative;
 }
 
-.grid-container {
+.main-grid-container {
     height: 50%;
     width: 85%;
     display: grid;
     grid-template-columns: 1fr 500px;
     position: absolute;
-
-    right: 0;
+    left: 15%
 }
 
-#grid-child-left {
+#main-grid-child-left-foodtruck-2025 {
     background-color: crimson;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-#grid-child-left img {
+#main-grid-child-left-foodtruck-2025 img {
     width: 700px;
     height: 100%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-#grid-child-right {
+#main-grid-child-right-foodtruck-2025 {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: rgb(45, 45, 45);
     width: 39%;
-    height: 129%;
+    height: 129.2%;
     position: absolute;
     right: 18%;
     color: white;
 
     display: flex;
     flex-direction: column;
-    text-align:start;
+    text-align: start;
 }
 
-#grid-child-right h1  {
-font-size: 38px;
-padding: 0;
-margin: 0;
+#main-grid-child-right-foodtruck-2025 h1 {
+    font-size: 38px;
+    padding: 0;
+    margin: 0;
 }
-#grid-child-right p{
+
+#main-grid-child-right-foodtruck-2025 p {
     margin: 0;
     padding: 0;
     font-size: 16px;
 }
+
 #for-sale-sign {
     padding: 24px;
 }
@@ -200,6 +198,7 @@ margin: 0;
     border-radius: 3px;
     opacity: 0.5;
 }
+
 .thumbnail:hover {
-   opacity: 1;
+    opacity: 1;
 }
