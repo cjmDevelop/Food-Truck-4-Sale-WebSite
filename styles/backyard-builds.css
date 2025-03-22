@@ -135,7 +135,7 @@ main {
     position: relative;
 }
 
-.main-grid-container {
+#foodtruck-2025 {
     height: 50%;
     width: 85%;
     display: grid;
