@@ -137,11 +137,11 @@ main {
 
 #foodtruck-2025 {
     height: 50%;
-    width: 85%;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 500px;
     position: absolute;
-    left: 15%
+    left: 5%
 }
 
 #main-grid-child-left-foodtruck-2025 {
@@ -151,7 +151,7 @@ main {
 }
 
 #main-grid-child-left-foodtruck-2025 img {
-    width: 700px;
+    width: 75%;
     height: 100%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -162,9 +162,9 @@ main {
     border-bottom-right-radius: 8px;
     background-color: rgb(45, 45, 45);
     width: 39%;
-    height: 129.2%;
+    height: 180%;
     position: absolute;
-    right: 18%;
+    right: 6.7%;
     color: white;
 
     display: flex;
