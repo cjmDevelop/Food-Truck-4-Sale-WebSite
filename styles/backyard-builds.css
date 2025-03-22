@@ -140,12 +140,12 @@ main {
 
 .grid-container {
     height: 50%;
-    width: 70%;
+    width: 85%;
     display: grid;
     grid-template-columns: 1fr 500px;
     position: absolute;
 
-    right: 9%
+    right: 0;
 }
 
 #grid-child-left {
@@ -165,7 +165,7 @@ main {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: rgb(45, 45, 45);
-    width: 30%;
+    width: 39%;
     height: 129%;
     position: absolute;
     right: 18%;
@@ -184,7 +184,22 @@ margin: 0;
 #grid-child-right p{
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
-#neon-sign {
+#for-sale-sign {
     padding: 24px;
+}
+
+.thumbnail-gallery {
+    padding: 24px;
+}
+
+.thumbnail {
+    height: 40px;
+    width: 72px;
+    border-radius: 3px;
+    opacity: 0.5;
+}
+.thumbnail:hover {
+   opacity: 1;
 }
