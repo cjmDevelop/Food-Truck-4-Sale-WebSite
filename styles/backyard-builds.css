@@ -197,6 +197,8 @@ main {
     width: 72px;
     border-radius: 3px;
     opacity: 0.5;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .thumbnail:hover {
