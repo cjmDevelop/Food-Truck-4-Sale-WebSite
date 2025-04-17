@@ -135,16 +135,25 @@ main {
     display: flex;
     justify-content: center;
 
- 
+    background-color: aqua;
 }
 
 #foodtruck-2025 {
-    width: 80%;
+    width: 100%;
     height: 80%;
     background: linear-gradient(0.25turn, darkgrey 15%, black);
     border-radius: 12px;
     display: flex;
 
+}
+
+@media(max-width: 1578px) {
+    main {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+ 
 }
 
 .big-img {
@@ -156,15 +165,19 @@ main {
 }
 
 @media(max-width:857px){
+   
     .big-img {
         object-fit: contain;
     }
+   
 }
 
 .main-text {
-    width: 60%;
-    color: white;
+    width: 100%;
+    color: rgb(255, 255, 255);
     padding: 1.5%;
+    background: linear-gradient(0.25turn, darkgrey 15%, black);
+    height: 80%;
 }
 .main-text h1{
     font-size: 2.5rem;
@@ -179,30 +192,6 @@ main {
     font-size: 0.9rem;
     color: white;
    
-}
-
-.banner-button-container {
-    display: flex; 
-    justify-content: center; 
-    width: 100%;
-    height: 20%  
-}
-
- #banner-button {
-    background-color: white;
-    width: 60%;
-    height: 40%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-}
-#cta-button {
-    text-decoration: none;
-    color: black;
-    font-size: 1.1rem;
-    font-weight: 560;
 }
 
 .thumbnail-gallery {
