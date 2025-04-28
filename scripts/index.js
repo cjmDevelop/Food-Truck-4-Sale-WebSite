@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.2, 10);
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.2, 10);
 const renderer = new THREE.WebGLRenderer({antialias: true});
 const controls = new OrbitControls(camera, renderer.domElement);
 const loader = new GLTFLoader();
@@ -12,7 +12,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 
 renderer.setClearColor(0x000000, 0);
-renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-d').appendChild(renderer.domElement);
 
 loader.load( '/foodtruck.glb', function ( gltf ) {

@@ -1,74 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --clear-border-color: #e3e3e3;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+    font-family: Poppins, 'segoe UI', sans-serif;
+    height: 100vh;
+    width: 100vw;
+
 }
 
-html,
 body {
     height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Poppins, 'segoe UI', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding-top: 2%;
-    overflow: auto;
+    text-align: center;
+    background: url("/woodfence.jpg");
 }
-
-@media(max-width: 1300px) {
-
-    html,
-    body {
-        padding-top: 2.5%;
-    }
-}
-
-@media(max-width: 1100px) {
-
-    html,
-    body {
-        padding-top: 2.5%;
-    }
-}
-
-@media(max-width: 900px) {
-
-    html,
-    body {
-        padding-top: 3.5%;
-    }
-}
-
-@media(max-width: 600px) {
-
-    html,
-    body {
-        padding-top: 5%;
-    }
-}
-
 
 nav {
-    padding: 1.6rem;
-    width: 100%;
-    border-bottom: 2px solid #e3e3e3;
-    background-color: azure;
-    opacity: 1;
-    position: fixed;
-    text-align: center;
+    padding: 1.2rem;
     top: 0;
-    z-index: 10;
+    width: 100%;
+    /* border-bottom: 2px solid #e3e3e3; */
+    border-bottom: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    opacity: 1;
 }
 
 nav a {
@@ -78,134 +38,9 @@ nav a {
 }
 
 nav a:hover {
-    color: black;
+    color: white;
 }
 
 nav a.active {
-    color: black;
-}
-
-
-header {
-    text-align: center;
-    height: 90%;
-}
-
-header p {
-    font-size: 1.3rem;
-}
-
-header a {
-    color: black;
-}
-
-header h1 {
-    font-size: 3.75rem;
-    font-weight: bold;
-    line-height: 1.1em;
-}
-
-.header-threed-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: baseline;
-    margin-top: 5%;
-    gap: 5%;
-}
-
-#first_model {
-    border: 9px solid #e4e4e4;
-    border-radius: 15px;
-}
-
-#middle_model {
-    border: 9px solid #e4e4e4;
-    border-radius: 15px;
-}
-
-#silverspoon_model {
-    border: 9px solid #e4e4e4;
-    border-radius: 15px;
-}
-
-main {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: aqua;
-}
-
-#foodtruck-2025 {
-    width: 100%;
-    height: 80%;
-    background: linear-gradient(0.25turn, darkgrey 15%, black);
-    border-radius: 12px;
-    display: flex;
-
-}
-
-@media(max-width: 1578px) {
-    main {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap-reverse;
-    }
- 
-}
-
-.big-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-@media(max-width:857px){
-   
-    .big-img {
-        object-fit: contain;
-    }
-   
-}
-
-.main-text {
-    width: 100%;
-    color: rgb(255, 255, 255);
-    padding: 1.5%;
-    background: linear-gradient(0.25turn, darkgrey 15%, black);
-    height: 80%;
-}
-.main-text h1{
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1.1em;
-    text-align: center;
-}
-.main-text p {
-    font-size: 1.1rem;
-}
-#truck-details {
-    font-size: 0.9rem;
     color: white;
-   
-}
-
-.thumbnail-gallery {
-    padding: 24px;
-}
-
-.thumbnail {
-    height: 40px;
-    width: 72px;
-    border-radius: 3px;
-    opacity: 0.5;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.thumbnail:hover {
-    opacity: 1;
 }
