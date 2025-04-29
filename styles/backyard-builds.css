@@ -57,12 +57,14 @@ nav a.active {
     height: 100vh;
     padding: 10px;
     box-sizing: border-box;
+
+    flex-direction: column;
 }
 
 .food-truck-image {
     object-fit: contain;
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 55%;
+    max-height: 55vh;
     position: relative;
     z-index: 20;
     border-radius: 15px;
