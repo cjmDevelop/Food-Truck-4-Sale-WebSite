@@ -19,6 +19,8 @@ body {
     font-style: normal;
     text-align: center;
     background: url("/woodfence.jpg");
+
+    background-size: cover;
 }
 
 nav {
@@ -43,4 +45,25 @@ nav a:hover {
 
 nav a.active {
     color: white;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    /* margin-top: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.food-truck-image {
+    object-fit: contain;
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    z-index: 20;
+    border-radius: 15px;
 }
