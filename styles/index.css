@@ -54,7 +54,7 @@ main {
     z-index: 1000;
 }
 
-main #two-d {
+  #two-d {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -63,6 +63,15 @@ main #two-d {
     position: absolute;
     /* left: 7%; */
     z-index: 1100;
+}
+
+@media(min-width: 1300px) {
+main #two-d {
+    margin-top: 5%;
+}
+main #two-d h1 {
+    font-size: 4.5rem;
+}
 }
 
 main #three-d {
@@ -78,8 +87,8 @@ main #three-d {
     transition: top 0.5s ease, left 0.5s ease;
 }
 
-main #two-d h1 {
-    font-size: 3rem;
+   #two-d h1 {
+    font-size: 4rem;
 }
 
 h1+p {
