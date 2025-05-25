@@ -1,44 +1,28 @@
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-const images = [
-    '/2025_FoodTruckPics/IMG_1214.JPEG',
-    '/2025_FoodTruckPics/IMG_1215.JPEG',
-    '/2025_FoodTruckPics/IMG_1217.JPEG',
-    '/2025_FoodTruckPics/IMG_1216.JPEG',
-    '/2025_FoodTruckPics/IMG_1220.JPEG',
-    '/2025_FoodTruckPics/IMG_1221.JPEG',
-    '/2025_FoodTruckPics/IMG_1222.JPEG',
-    '/2025_FoodTruckPics/IMG_1223.JPEG',
-    '/2025_FoodTruckPics/IMG_1224.JPEG',
-    '/2025_FoodTruckPics/IMG_1225.JPEG',
-    '/2025_FoodTruckPics/IMG_1226.JPEG',
-    '/2025_FoodTruckPics/IMG_1227.JPEG',
-    '/2025_FoodTruckPics/IMG_1228.JPEG',
-    '/2025_FoodTruckPics/IMG_1230.JPEG',
-    '/2025_FoodTruckPics/IMG_1231.JPEG',
-    '/2025_FoodTruckPics/IMG_1233.JPEG',
-    '/2025_FoodTruckPics/IMG_1234.JPEG',
-    '/2025_FoodTruckPics/IMG_1235.JPEG',
-    '/2025_FoodTruckPics/IMG_1236.JPEG',
-];
+let currentIndex = 0;
 
-const imagesB = [
-    '/2025_FoodTruckPics/IMG_1214.JPEG',
-    '/2025_FoodTruckPics/IMG_1215.JPEG',
-    '/2025_FoodTruckPics/IMG_1217.JPEG',
-    '/2025_FoodTruckPics/IMG_1216.JPEG',
-    '/2025_FoodTruckPics/IMG_1220.JPEG',
-    '/2025_FoodTruckPics/IMG_1221.JPEG',
-    '/2025_FoodTruckPics/IMG_1222.JPEG',
-    '/2025_FoodTruckPics/IMG_1223.JPEG',
-    '/2025_FoodTruckPics/IMG_1224.JPEG',
-    '/2025_FoodTruckPics/IMG_1225.JPEG',
-    '/2025_FoodTruckPics/IMG_1226.JPEG',
-    '/2025_FoodTruckPics/IMG_1227.JPEG',
-    '/2025_FoodTruckPics/IMG_1228.JPEG',
-    '/2025_FoodTruckPics/IMG_1230.JPEG',
-    '/2025_FoodTruckPics/IMG_1231.JPEG',
-    '/2025_FoodTruckPics/IMG_1233.JPEG',
-    '/2025_FoodTruckPics/IMG_1234.JPEG',
-    '/2025_FoodTruckPics/IMG_1235.JPEG',
-    '/2025_FoodTruckPics/IMG_1236.JPEG',
-];
+function updateSliderPosition() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  if (currentIndex < slides.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // loop to start
+  }
+  updateSliderPosition();
+});
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = slides.length - 1; // loop to end
+  }
+  updateSliderPosition();
+});
