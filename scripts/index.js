@@ -12,7 +12,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 
 renderer.setClearColor(0x000000, 0);
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth / 1.4, window.innerHeight / 1.4);
 document.getElementById('three-d').appendChild(renderer.domElement);
 
 loader.load( '/foodtruck.glb', function ( gltf ) {
