@@ -15,8 +15,6 @@ html, body {
 }
 
 .contact {
-    border: 2px solid red;
-
     position: relative;
     min-height: 100vh;
     padding: 50px 100px;
