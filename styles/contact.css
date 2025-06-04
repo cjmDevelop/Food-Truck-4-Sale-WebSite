@@ -14,6 +14,20 @@ html, body {
     width: 100vw;
 }
 
+.contact {
+    border: 2px solid red;
+
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+}
+
+
+
 nav {
     padding: 1.2rem;
     top: 0;
@@ -37,10 +51,6 @@ nav a:hover {
 
 nav a.active {
     color: white;
-}
-
-section {
-   text-align: center;
 }
 
 
