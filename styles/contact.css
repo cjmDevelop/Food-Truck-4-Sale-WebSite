@@ -52,7 +52,6 @@ body {
     background: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
-
 .contact >* {
     position: relative;
     z-index: 1;
@@ -113,6 +112,8 @@ body {
     width: 40%;
     padding: 40px;
     background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .contactForm h2 {
@@ -223,3 +224,34 @@ nav a.active {
 }
 
 
+/* Mobile layout control*/
+@media(max-width: 991px) {
+    .contact {
+        padding: 50px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .contactInfo {
+        margin-bottom: 40px;
+    }
+
+    .container .contactInfo,
+    .contactForm {
+        width: 100%;
+    }
+}
+
+
+.container .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+@media (max-width: 991px) {
+    .container .contactInfo .box {
+        margin-bottom: 20px;
+    }
+}
