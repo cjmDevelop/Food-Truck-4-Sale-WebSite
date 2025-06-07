@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Showcasing custom backyard food trucks available for sale.">
   <title>Backyard Builds</title>
   <link rel="icon" href="/tab-icons/lightFoodTruckIcon.png">
   <link rel="stylesheet" href="styles/backyard-builds.css">
@@ -16,43 +17,74 @@
       </script>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="backyard-builds.html" class="active">Backyard Builds</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="backyard-builds.html" class="active">Backyard Builds</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
   <main>
-    
     <div class="backyard-background">
-   
-    <div class="red-sale-sign">
-      <h1>FOR SALE</h1>
-      <div class="slider-container">
-        <button class="prev">&#10094;</button>
-        <div class="slider">
-          <div class="slide">
-            <div class="image-wrapper">
-              <img src="/2025_FoodTruckPics/IMG_1215.JPEG" />
+      <div class="red-sale-sign">
+        <h1>FOR SALE</h1>
+        <div class="slider-container">
+          <button class="prev">&#10094;</button>
+          <div class="slider">
+            <div class="slide">
+              <div class="image-wrapper">
+                <img src="/2025_FoodTruckPics/IMG_1215.JPEG" alt="Food Truck image 1" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="image-wrapper">
+                <img loading="lazy" src="/2025_FoodTruckPics/IMG_1216.JPEG" alt="Food Truck image 2" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="image-wrapper">
+                <img loading="lazy" src="/2025_FoodTruckPics/IMG_1218.JPEG" alt="Food Truck image 3" />
+              </div>
             </div>
           </div>
-          <div class="slide">
-            <div class="image-wrapper">
-              <img src="/2025_FoodTruckPics/IMG_1216.JPEG" />
-            </div>
-          </div>
-          <div class="slide">
-            <div class="image-wrapper">
-              <img src="/2025_FoodTruckPics/IMG_1218.JPEG" />
-            </div>
-          </div>
+          <button class="next">&#10095;</button>
         </div>
-        <button class="next">&#10095;</button>
+        <h3 style="visibility: hidden;">.</h3>
       </div>
-      <h3 style="visibility: hidden;">.</h3>
-    </div>
     </div>
   </main>
+  <div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".modal-close");
+
+    document.querySelectorAll(".slide img").forEach(img => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
   <script type="module" src="scripts/backyardbuild_pics.js"></script>
   <script type="module" src="scripts/backyardbuild.js"></script>
   <script type="module" src="scripts/backyardbuild_middle.js"></script>
