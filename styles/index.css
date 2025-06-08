@@ -184,12 +184,43 @@ h1+p {
 }
 
 #footer {
-    height: 100%;
-    width: 100%; 
-    display: flex; 
-    overflow: hidden;
-    background: url("/light-wood-fence.jpg");
+    width: 100%;
+    background: url("/light-wood-fence.jpg") center center repeat;
+    background-position: center 20%;
+
+    background-size: 60% auto;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+#footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+#footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
 
 main {
  margin-bottom: 50%;
