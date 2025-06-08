@@ -64,15 +64,16 @@ main {
     align-items: center;
     text-align: center;
     position: absolute;
+    left: 3%;
     z-index: 1100;
 }
 
-@media(min-width: 1300px) {
+@media(max-width: 1300px) {
 main #two-d {
     margin-top: 5%;
 }
 main #two-d h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
 }
 }
 
@@ -83,8 +84,8 @@ main #three-d {
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 43%;
-    top: 0;
+    left: 50%;
+    top: 12%;
     z-index: 1;
     transition: top 0.5s ease, left 0.5s ease;
 }
@@ -183,10 +184,13 @@ h1+p {
 }
 
 #footer {
-    height: 60%;
+    height: 100%;
     width: 100%; 
     display: flex; 
     overflow: hidden;
     background: url("/light-wood-fence.jpg");
 }
 
+main {
+ margin-bottom: 50%;
+}

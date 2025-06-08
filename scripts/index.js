@@ -11,24 +11,36 @@ const loader = new GLTFLoader();
 controls.enableDamping = true;
 controls.dampingFactor = 0.03;
 
-renderer.setClearColor(0x000000, 0);
-renderer.setSize(window.innerWidth / 1.4, window.innerHeight / 1.4);
+
 document.getElementById('three-d').appendChild(renderer.domElement);
 
 loader.load( '/foodtruck.glb', function ( gltf ) {
     const model = gltf.scene;
+
+    // Compute bounding box and center
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+
+    // Shift the model so it's center is at the origin
+    model.position.sub(center);
+
 	scene.add(model);
-    camera.position.z = 1.3;
-    camera.position.y = 0.8;
-    camera.position.x = -1;
+
+    camera.position.z = 1;
+    camera.position.y = 0.1;
+    camera.position.x = -1.05;
+    //   camera.position.set(-1, 0.8, 1.3);
 }, undefined, function ( error ) {
 	console.error( error );
 });
 
+// renderer.setClearColor(0x000000, 0);
+const scaleFactor = 2.5;
+renderer.setSize(window.innerWidth / scaleFactor, window.innerHeight / scaleFactor);
 function onWindowResize(){
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth / scaleFactor, window.innerHeight / scaleFactor);
 }
 
 window.addEventListener('resize', onWindowResize, false);
