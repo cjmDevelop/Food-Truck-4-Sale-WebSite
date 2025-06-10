@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
 
-/* ========== RESET ========== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ========== ROOT VARIABLES ========== */
 :root {
   --font-main: 'Poppins', 'Segoe UI', sans-serif;
   --color-bg: #000;
@@ -18,24 +17,22 @@
   --cta-radius: 1000px;
 }
 
-/* ========== BASE TYPOGRAPHY ========== */
-html, body {
+/* BASE */
+body {
   font-family: var(--font-main);
   font-weight: 400;
-  font-style: normal;
   text-align: center;
-  background-color: #fff;
   color: #000;
+  background: #fff;
   line-height: 1.6;
 }
 
-/* ========== NAVIGATION ========== */
+/* NAVIGATION */
 nav {
   padding: 1.2rem;
-  width: 100%;
-  border-bottom: 2px solid black;
   background-color: var(--color-bg);
   text-align: center;
+  border-bottom: 2px solid black;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -45,6 +42,7 @@ nav a {
   text-decoration: none;
   color: var(--color-text);
   margin: 0 3%;
+  font-weight: 600;
   transition: color 0.2s ease-in-out;
 }
 
@@ -53,96 +51,143 @@ nav a.active {
   color: var(--color-hover);
 }
 
-/* ========== LAYOUT ========== */
+/* LAYOUT */
 main {
   width: 100%;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-section {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-}
-
-/* ========== TEXT SECTION ========== */
-#two-d {
-  width: 50%;
-  padding: 3rem 2rem;
-  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1rem;
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  order: 1;
-  z-index: 2000;
-  animation: fadeInUp 1.2s ease both;
+}
+
+/* TEXT SECTION */
+#two-d {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #two-d h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.75rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  line-height: 1.3;
 }
 
 #two-d p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   max-width: 600px;
   color: #333;
-  margin-bottom: 2rem;
 }
 
-/* ========== 3D SECTION ========== */
+/* 3D MODEL SECTION */
 #three-d {
-  width: 50%;
+  flex: 1;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 2;
-  z-index: 1000;
-  animation: fadeInUp 1.2s ease both;
+  height: 400px;
 }
 
-/* ========== CTA BUTTON ========== */
-#cta-button {
-  text-transform: uppercase;
-  background: var(--cta-bg);
-  color: var(--cta-text);
-  padding: 1em 3em;
-  font-weight: 600;
-  border-radius: var(--cta-radius);
-  transition: transform 150ms ease;
-  font-size: 1rem;
-  margin-top: 0rem;
+/* HIGHLIGHT SECTION */
+#model-highlight {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+#model-highlight h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#model-highlight ul {
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  max-width: 600px;
+}
+
+#model-highlight li {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* FOOTER */
+#footer {
+  width: 100%;
+  background: url("/light-wood-fence.jpg") center 20% repeat;
+  background-size: 60% auto;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#footer nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#footer nav ul li a {
+  color: white;
   text-decoration: none;
-  display: inline-block;
-  position: relative;
-  z-index: 2000;
+  font-weight: bold;
 }
 
-#cta-button:hover {
-  transform: scale(1.1);
+#footer nav ul li a:hover {
+  text-decoration: underline;
 }
 
-#cta-button:focus {
-  outline: 3px solid white;
-  outline-offset: 4px;
-}
-
-/* ========== RESPONSIVE LAYOUT ========== */
-@media (max-width: 900px) {
-  #two-d, #three-d {
-    width: 100%;
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 600px) {
-  main {
+#two-d, #three-d {
+  animation: fadeInUp 1.2s ease both;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #intro-section {
     flex-direction: column;
   }
 
@@ -154,20 +199,15 @@ section {
     font-size: 1rem;
   }
 
-  #cta-button {
-    padding: 0.75em 2em;
-    font-size: 0.95rem;
+  #three-d {
+    height: 300px;
   }
-}
 
-/* ========== ANIMATIONS ========== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  #model-highlight h2 {
+    font-size: 1.5rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  #model-highlight ul {
+    font-size: 1rem;
   }
 }

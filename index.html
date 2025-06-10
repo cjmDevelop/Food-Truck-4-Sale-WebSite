@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Food Truck 4 Sale</title>
-    <link rel="icon" href="tab-icons/lightFoodTruckIcon.png">
-    <link rel="stylesheet" href="styles/index.css">
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
-          }
-        }
-      </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Backyard Builds Food Truck</title>
+  <link rel="icon" href="tab-icons/lightFoodTruckIcon.png" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
- <nav>
+  <nav>
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="backyard-builds.html">Backyard Builds</a>
     <a href="contact.html">Contact Us</a>
- </nav>
- <main>
-  <section>
-    <div id="two-d">
-        <h1>Food Trucks Independently <br/>Built & Ready for Business</h1>
-        <p style="text-align: center;">Ready to roll, newly equipped, and perfect for any cuisine! This food truck is the ultimate tool 
-        for entrepreneurs wanting to take their business mobile. Call us today to make it yours!
-        </p>
-        <a href="contact.html" id="cta-button">Have Questions? Contact Us!</a>
-    </div> 
-    <div id="three-d"></div>
+  </nav>
+  <main>
+    <section id="intro-section">
+      <div id="two-d">
+        <h1>Custom Built Food Trucks by Backyard Builds</h1>
+        <p>Explore our fully-equipped 2025 model — a turnkey setup for mobile culinary success.</p>
+      </div>
+      <div id="three-d"></div>
     </section>
-</main>
-
-<script type="module" src="scripts/index.js"></script>
+    <section id="model-highlight">
+      <h2>Tour Our 2025 Flagship Model</h2>
+      <ul>
+        <li>💡 Commercial-grade kitchen appliances</li>
+        <li>🛠️ Custom aluminum body frame</li>
+        <li>🔥 Fully wired & plumbed, ready to roll</li>
+        <li>🧯 Certified fire suppression system (Florida compliant)</li>
+        <li>🛻 Built with backyard pride and precision</li>
+        <li>📞 Nationwide delivery available</li>
+      </ul>
+    </section>
+  </main>
+  <footer id="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Backyard Builds. All rights reserved.</p>
+      <nav style="background: none; border: none;">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="backyard-builds.html">Backyard Builds</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
