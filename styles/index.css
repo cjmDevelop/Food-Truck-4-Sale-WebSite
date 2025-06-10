@@ -118,7 +118,7 @@ section {
   border-radius: var(--cta-radius);
   transition: transform 150ms ease;
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   text-decoration: none;
   display: inline-block;
   position: relative;
