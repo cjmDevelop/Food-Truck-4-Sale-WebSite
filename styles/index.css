@@ -51,6 +51,14 @@ nav a.active {
   color: var(--color-hover);
 }
 
+nav a img {
+  height: 100%;         /* Make image fill the height of the nav link */
+  max-height: 80px;     /* Limit it to a reasonable size */
+  width: auto;          /* Maintain aspect ratio */
+  vertical-align: middle; /* Align with text, if needed */
+  border-radius: 40%;
+}
+
 /* LAYOUT */
 main {
   width: 100%;
@@ -211,3 +219,156 @@ main {
     font-size: 1rem;
   }
 }
+
+.three-d-wrapper {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.three-d-wrapper h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+
+section .contain {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  /* border: 2px solid purple; */
+  background: url("/light-wood-fence.jpg");
+}
+
+ .one {
+        width: 50%;
+        height: 100%;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2%;
+      }
+
+      .two {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        margin: 2%;
+        text-align: justify;
+        margin-left: 3%;
+      }
+
+    
+      
+      .image-wrapper {
+  aspect-ratio: 16 / 9 ;
+}
+
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+} 
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.prev:hover, 
+button.next:hover {
+  scale: 1.3;
+}
+
+button.next {
+  right: 10px;
+}
+
+@media (max-width: 600px) {
+  button.prev,
+  button.next {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+}
+
+
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px black;
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
