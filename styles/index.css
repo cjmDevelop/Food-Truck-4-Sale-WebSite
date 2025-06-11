@@ -144,7 +144,7 @@ main {
 #footer {
   width: 100%;
   background: url("/light-wood-fence.jpg") center 20% repeat;
-  background-size: 60% auto;
+  background-size: 60% cover;
   color: white;
   padding: 2rem;
   display: flex;
@@ -242,7 +242,9 @@ section .contain {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   background: url("/light-wood-fence.jpg") center center no-repeat;
   background-size: cover;
   padding: 3rem 1rem;
@@ -273,6 +275,51 @@ section .contain {
   margin-bottom: 1rem;
   text-shadow: 2px 2px #00000066;
 }
+
+.one {
+  position: relative;
+  /* existing styles */
+}
+
+.one::before,
+.one::after,
+.one .nail-top-right,
+.one .nail-bottom-left,
+.one .nail-bottom-right {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, #999, #333);
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4), inset -1px -1px 2px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+/* Top-left */
+.one::before {
+  top: -8px;
+  left: -8px;
+}
+
+/* Top-right */
+.one::after {
+  top: -8px;
+  right: -8px;
+}
+
+/* Bottom-left */
+.one .nail-bottom-left {
+  bottom: -8px;
+  left: -8px;
+}
+
+/* Bottom-right */
+.one .nail-bottom-right {
+  bottom: -8px;
+  right: -8px;
+}
+
 
 .two {
   flex: 1;
@@ -376,8 +423,6 @@ button.next {
     padding: 5px;
   }
 }
-
-
 
 .modal {
   display: none; 
