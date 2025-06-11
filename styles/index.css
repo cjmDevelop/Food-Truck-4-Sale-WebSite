@@ -73,7 +73,6 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 2rem 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -149,7 +148,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 4px solid #800000; /* Optional decorative top border */
+  border-top: 1px solid #800000; /* Optional decorative top border */
   box-shadow: inset 0 6px 12px rgba(0,0,0,0.4);
 }
 
@@ -257,7 +256,6 @@ section .contain {
   padding: 3rem 1rem;
   gap: 1.5rem;
   padding-bottom: 6rem;
-  border: 2px solid orange;
   height: 100%;
 }
 
@@ -274,7 +272,6 @@ section .contain {
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   transform: rotate(-2deg);
   border-radius: 8px;
-  position: relative;
   z-index: 1;
 }
 
@@ -325,7 +322,6 @@ section .contain {
 
 
 .two {
-  /* flex: 1; */
   min-width: 300px;
   max-width: 500px;
   background: rgba(255, 255, 255, 0.85);
@@ -346,9 +342,12 @@ section .contain {
   section .contain {
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
     background: url("/light-wood-fence.jpg");
     background-size: cover;
+  }
+
+  .one {
+    margin-top: 25%;
   }
 
   .one, .two {
@@ -491,6 +490,4 @@ button.next {
 .subheading {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-top: 0.5rem;
-  /* font-style: italic; */
 }
