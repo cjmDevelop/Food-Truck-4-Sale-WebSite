@@ -3,10 +3,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.2, 10);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.2, 10);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-// renderer.setClearColor(0x000000, 0);
+renderer.setClearColor(0x000000, 0);
+// renderer.setClearColor(0xd3d3d3);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;

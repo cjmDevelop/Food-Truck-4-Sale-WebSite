@@ -15,6 +15,8 @@
   --cta-bg: #242424;
   --cta-text: #ffffff;
   --cta-radius: 1000px;
+
+  --color-hover-b: #f2ff00;
 }
 
 /* BASE */
@@ -27,7 +29,7 @@ body {
   line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* HEADER | NAVIGATION */
 nav {
   padding: 1.2rem;
   background-color: var(--color-bg);
@@ -46,18 +48,28 @@ nav a {
   transition: color 0.2s ease-in-out;
 }
 
-nav a:hover,
-nav a.active {
-  color: var(--color-hover);
+nav a:hover {
+  color: var(--color-hover); 
+  /* text-decoration: underline var(--color-hover-b); */
 }
 
-nav a img {
-  height: 100%;         /* Make image fill the height of the nav link */
-  max-height: 80px;     /* Limit it to a reasonable size */
-  width: auto;          /* Maintain aspect ratio */
-  vertical-align: middle; /* Align with text, if needed */
-  border-radius: 50%;
+header{
+  background-color: #000;
 }
+header a img {
+  height: 100%;        
+  max-height: 135px;     
+  width: auto;          
+  vertical-align: middle; 
+  border-radius: 50%;
+  /* border: none; */
+}
+
+nav a.active img {
+  color: var(--color-hover); 
+  border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
+}
+
 
 /* LAYOUT */
 main {
@@ -146,6 +158,7 @@ main {
   color: white;
   padding: 3rem 1rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   border-top: 3px solid #383030; 
@@ -156,6 +169,14 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.footer-content a img {
+   height: 100%;        
+  max-height: 135px;     
+  width: auto;          
+  vertical-align: middle; 
+  border-radius: 50%;
 }
 
 #footer nav ul {
@@ -491,3 +512,4 @@ button.next {
   font-size: 1.2rem;
   font-weight: 500;
 }
+
