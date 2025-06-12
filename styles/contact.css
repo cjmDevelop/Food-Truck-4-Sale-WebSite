@@ -139,22 +139,7 @@ header a img {
   text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*----------------------------------------------------*/
 
 .contact {
     position: relative;
@@ -293,10 +278,16 @@ header a img {
     color: #666;
 }
 
-.contactForm .inputBox input:focus ~ span,
 .contactForm .inputBox input:valid ~ span,
-.contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span {
+    color: green;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox textarea:focus ~ span
+ {
     color: #e91e63;
     font-size: 12px;
     transform: translateY(-20px);
