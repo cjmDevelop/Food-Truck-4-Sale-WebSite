@@ -48,9 +48,15 @@ nav a {
   transition: color 0.2s ease-in-out;
 }
 
-nav a:hover {
+nav a.active {
+  color: white;
+}
+
+
+header nav a:hover,
+header nav a:active {
   color: var(--color-hover); 
-  /* text-decoration: underline var(--color-hover-b); */
+  text-decoration: underline var(--color-hover-b);
 }
 
 header{
@@ -65,7 +71,7 @@ header a img {
   /* border: none; */
 }
 
-nav a.active img {
+header a.active img {
   color: var(--color-hover); 
   border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
 }
