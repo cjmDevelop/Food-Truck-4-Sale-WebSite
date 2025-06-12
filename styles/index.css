@@ -50,13 +50,14 @@ nav a {
 
 nav a.active {
   color: white;
+  text-decoration: underline var(--color-hover-b);
 }
 
 
 header nav a:hover,
 header nav a:active {
   color: var(--color-hover); 
-  text-decoration: underline var(--color-hover-b);
+  /* text-decoration: underline var(--color-hover-b); */
 }
 
 header{
@@ -175,6 +176,15 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.footer-content a:active {
+  color: white;
+  text-decoration: underline var(--color-hover-b);
+}
+
+.footer-content a:hover {
+  color: white;
 }
 
 .footer-content a img {
