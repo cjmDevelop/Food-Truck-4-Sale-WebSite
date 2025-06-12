@@ -1,18 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins, 'segoe UI', sans-serif;
-   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100vh;
-    width: 100vw;
+:root {
+  --font-main: 'Poppins', 'Segoe UI', sans-serif;
+  --color-bg: #000;
+  --color-text: #929292;
+  --color-hover: #ffffff;
+  --cta-bg: #242424;
+  --cta-text: #ffffff;
+  --cta-radius: 1000px;
+  --color-hover-b: #f2ff00;
 }
+
+/* BASE */
+body {
+  font-family: var(--font-main);
+  font-weight: 400;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* HEADER | NAVIGATION */
+nav {
+  padding: 1.2rem;
+  background-color: var(--color-bg);
+  text-align: center;
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  margin: 0 3%;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a.active {
+  color: white;
+  text-decoration: underline var(--color-hover-b);
+}
+
+header a:hover img {
+  border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
+}
+
+#footer a:hover img {
+border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
+}
+
+
+header nav a:hover,
+header nav a:active {
+  color: var(--color-hover); 
+  /* text-decoration: underline var(--color-hover-b); */
+}
+
+header{
+  background-color: var(--color-bg);
+}
+header a img {
+  height: 100%;        
+  max-height: 135px;     
+  width: auto;          
+  vertical-align: middle; 
+  border-radius: 50%;
+  /* border: none; */
+}
+
+/* FOOTER */
+#footer {
+  width: 100%;
+  background: var(--color-bg); 
+  color: white;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-top: 3px solid #383030; 
+  box-shadow: inset 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-content a:active {
+  color: white;
+  text-decoration: underline var(--color-hover-b);
+}
+
+.footer-content a:hover {
+  color: white;
+}
+
+#footer a img {
+  height: 100%;        
+  max-height: 135px;     
+  width: auto;          
+  vertical-align: middle; 
+  border-radius: 50%;
+  margin-bottom: 7%;
+}
+
+ .footer-content a:hover > img {
+  border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
+}
+
+#footer nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#footer nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .contact {
     position: relative;
@@ -198,30 +340,12 @@ body {
     white-space: nowrap;
 }
 
-nav {
-    padding: 1.2rem;
-    top: 0;
-    width: 100%;
-    border-bottom: 2px solid black;
-    background-color: rgb(0, 0, 0);
-    opacity: 1;
-    text-align: center;
 
-}
 
-nav a {
-    text-decoration: none;
-    color: #929292;
-    margin: 0 3%;
-}
 
-nav a:hover {
-    color: white;
-}
 
-nav a.active {
-    color: white;
-}
+
+
 
 
 /* Mobile layout control*/
