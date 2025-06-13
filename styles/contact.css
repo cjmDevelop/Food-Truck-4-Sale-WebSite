@@ -272,8 +272,8 @@ header a img {
 }
 
 .contactForm {
-    width: 40%;
-    padding: 40px;
+    width: 45%;
+    padding: 3%;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -403,4 +403,66 @@ header a img {
   color: green;
   margin-top: 1rem;
   font-weight: 500;
+}
+
+
+#button {
+    border-radius: 5px;
+}
+
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* or whatever fits your layout */
+  margin: 0 5%;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+.truck-icon {
+  position: absolute;
+  top: 53.5%;   /* adjust this to match the truck location */
+  left: 50%;  /* adjust this to match the truck location */
+  transform: translate(-50%, -100%); /* Center the icon above the point */
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.truck-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -100%) scale(1); }
+  50% { transform: translate(-50%, -100%) scale(1.1); }
+  100% { transform: translate(-50%, -100%) scale(1); }
+}
+
+
+.truck-note {
+  position: absolute;
+  top: 18%; /* Adjust as needed */
+  left: 30%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  max-width: 250px;
+  z-index: 3;
+  display: none; /* Hidden by default */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
