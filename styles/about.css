@@ -88,7 +88,9 @@ body {
 #footer nav ul li a:hover {
   text-decoration: underline;
 }
-
+#footer nav a {
+  white-space: nowrap;
+}
 
 /* HEADER | NAVIGATION */
 nav {
@@ -107,6 +109,8 @@ nav a {
   margin: 0 3%;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
+
+    white-space: nowrap;
 }
 
 nav a.active {

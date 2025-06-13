@@ -46,6 +46,7 @@ nav a {
   margin: 0 3%;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
+  white-space: nowrap;
 }
 
 nav a.active {
