@@ -1,5 +1,3 @@
-
-
 /* Pop-up message for successful completion of contact form. */
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -22,7 +20,6 @@ document.getElementById("formMessage").scrollIntoView({
     behavior: "smooth", 
     block: "center" 
 });
-/*----------------------------------------------------------*/
 
 
 /* Truck note logic for onclick on food truck map icon. */
