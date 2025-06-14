@@ -1,4 +1,4 @@
-# Food Truck 4 Sale Website - HTML, CSS, Three.JS
+# Food Truck 4 Sale Website - HTML, CSS, JavaScript, Three.JS
 A simple website for an independent Food Truck creator & seller.
 
 # three.js
