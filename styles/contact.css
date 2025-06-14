@@ -17,7 +17,6 @@
   --color-hover-b: #f2ff00;
 }
 
-/* BASE */
 body {
   font-family: var(--font-main);
   font-weight: 400;
@@ -26,7 +25,8 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER | NAVIGATION */
+
+/* Header-Nav */
 nav {
   padding: 1.2rem;
   background-color: var(--color-bg);
@@ -35,50 +35,227 @@ nav {
   position: sticky;
   top: 0;
   z-index: 999;
-}
-
-nav a {
+}nav a {
   text-decoration: none;
   color: var(--color-text);
   margin: 0 3%;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
   white-space: nowrap;
-}
-
-nav a.active {
+}nav a.active {
   color: white;
   text-decoration: underline var(--color-hover-b);
-}
-
-header a:hover img {
-  border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
-}
-
-#footer a:hover img {
-border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
-}
-
-
-header nav a:hover,
+}header a:hover img {
+  border: 2px solid var(--color-hover-b); 
+}header nav a:hover,
 header nav a:active {
   color: var(--color-hover); 
-  /* text-decoration: underline var(--color-hover-b); */
-}
-
-header{
+}header{
   background-color: var(--color-bg);
-}
-header a img {
+}header a img {
   height: 100%;        
   max-height: 135px;     
   width: auto;          
   vertical-align: middle; 
   border-radius: 50%;
-  /* border: none; */
 }
 
-/* FOOTER */
+
+/* Container for */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+
+/* Contact section: contact-header, */
+.contact-section-text {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("/2025_FoodTruckPics/IMG_1199.JPEG");
+    background-size: cover;
+    background-position: center;
+}.contact-section-text .section-header{
+    max-width: 800px;
+    text-align: center;
+}.contact-section-text .section-header h2 {
+   font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}.contact-section-text .section-header p {
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}.contact-section-text::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}.contact-section-text >* {
+    position: relative;
+    z-index: 1;
+}
+
+#formMessage {
+  background: whitesmoke;
+  width: 100vw;
+}
+
+
+
+
+
+
+/* Container for GPS map screenshot */
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 5%;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 2%;
+}.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Truck Icon on GPS map and truck note on click */
+.truck-icon {
+  position: absolute;
+  top: 55%;   
+  left: 50%;  
+  transform: translate(-50%, -100%); 
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+} @keyframes pulse {
+  0% { transform: translate(-50%, -100%) scale(1); }
+  50% { transform: translate(-50%, -100%) scale(1.1); }
+  100% { transform: translate(-50%, -100%) scale(1); }
+} .truck-note {
+  position: absolute;
+  top: 18%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  max-width: 250px;
+  z-index: 3;
+  display: none; 
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
+
+
+
+/* Contact form styling */
+form {
+    width: 100%;
+    padding: 3%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 6%;
+}form h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}form .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}form .inputBox input,
+form .inputBox textarea {
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: vertical;
+}form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+
+/* Form validation styling & effects */
+form .inputBox input:not(:placeholder-shown) ~ span,
+form .inputBox textarea:not(:placeholder-shown) ~ span {
+  font-size: 12px;
+  transform: translateY(-20px);
+  color: red;
+}form .inputBox input:focus ~ span,
+form .inputBox textarea:focus~span {
+  color: red;
+  font-size: 12px;
+  transform: translateY(-20px);
+}form .inputBox input:valid~span,
+form .inputBox textarea:valid~span {
+  color: green;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+
+/*Button & message of successful completion of form.*/
+form .inputBox input[type="submit"] {
+    width: 100px;
+    background: #333333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}.form-message {
+  color: green;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+
+
+
+/* Footer */
 #footer {
   width: 100%;
   background: var(--color-bg); 
@@ -90,137 +267,47 @@ header a img {
   align-items: center;
   border-top: 3px solid #383030; 
   box-shadow: inset 0 6px 12px rgba(0,0,0,0.4);
-}
-
-.footer-content {
+}.footer-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.footer-content a:active {
+}.footer-content a:active {
   color: white;
   text-decoration: underline var(--color-hover-b);
-}
-
-.footer-content a:hover {
+}.footer-content a:hover {
   color: white;
-}
-
-#footer a img {
+}#footer a img {
   height: 100%;        
   max-height: 135px;     
   width: auto;          
   vertical-align: middle; 
   border-radius: 50%;
   margin-bottom: 7%;
-}
-
- .footer-content a:hover > img {
-  border: 2px solid var(--color-hover-b); /* Only active logo gets a border */
-}
-
-#footer nav ul {
+}.footer-content a:hover > img {
+  border: 2px solid var(--color-hover-b); 
+}#footer nav ul {
   list-style: none;
   padding: 0;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-#footer nav ul li a {
+}#footer nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-#footer nav ul li a:hover {
+}#footer nav ul li a:hover {
   text-decoration: underline;
-}
-
-/*----------------------------------------------------*/
-
-.contact {
-    position: relative;
-    min-height: 100vh;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: url("/2025_FoodTruckPics/IMG_1199.JPEG");
-    background-size: cover;
-    background-position: center;
-}
-
-.contact .content {
-    max-width: 800px;
-    text-align: center;
-}
-
-.contact .content h2 {
-   font-size: 3rem;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.contact .content p {
-    font-weight: 300;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.contact::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-}
-.contact >* {
-    position: relative;
-    z-index: 1;
+}#footer a:hover img {
+border: 2px solid var(--color-hover-b); 
 }
 
 
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.container .contactInfo {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contactInfo .map-box iframe {
-  width: 100%;
-  height: 250px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.contactInfo .promo {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.2);
-  margin-top: 20px;
-}
-.contactInfo .promo .text a {
+/* Social Media Icon stylings, not in use yet.*/
+.contact-section-textInfo .promo .text a {
   color: #f2ff00;
   text-decoration: underline;
 }
-
 .socials {
   display: flex;
   gap: 15px;
@@ -236,234 +323,28 @@ header a img {
   transform: scale(1.2);
 }
 
-
-.container .contactInfo .box {
-    position: relative;
-    padding: 20px 0;
-    display: flex;
-}
-
-.container .contactInfo .box .icon {
-    min-width: 60px;
-    height: 60px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 22px;
-
-}
-
-.container .contactInfo .box .text {
-    display: flex;
-    margin-left: 20px;
-    font-size: 16px;
-    color: #fff;
-    flex-direction: column;
-    font-weight: 300;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.container .contactInfo .box .text h3 {
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-
-}
-
-.contactForm {
-    width: 45%;
-    padding: 3%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.contactForm h2 {
-    font-size: 30px;
-    color: #333;
-    font-weight: 500;
-}
-
-.contactForm .inputBox {
-    position: relative;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.contactForm .inputBox input,
-.contactForm .inputBox textarea {
-    width: 100%;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    border: none;
-    border-bottom: 2px solid #333;
-    outline: none;
-    resize: none;
-}
-
-.contactForm .inputBox span {
-    position: absolute;
-    left: 0;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    pointer-events: none;
-    transition: 0.5s;
-    color: #666;
-}
-
-.contactForm .inputBox input:valid ~ span,
-.contactForm .inputBox textarea:valid ~ span {
-    color: green;
-    font-size: 12px;
-    transform: translateY(-20px);
-}
-
-.contactForm .inputBox input:focus ~ span,
-.contactForm .inputBox textarea:focus ~ span
- {
-    color: #e91e63;
-    font-size: 12px;
-    transform: translateY(-20px);
-}
-
-.contactForm .inputBox input[type="submit"] {
-    width: 100px;
-    background: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 18px;
-}
-
+/* Mobile layout control ==================================================================================================*/
 @media(max-width: 991px) {
-    .contact {
+    .contact-section-text {
         padding: 50px;
     }
     .container {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
-    .container .contactInfo {
+    .container .contact-section-textInfo {
         margin-bottom: 40px;
     }
-    .container .contactInfo,
-    .contactForm  {
-        width: 100%;
+    .container .contact-section-textInfo,
+    form {
+        width: 400px;
     }
-}
-
-.visually-hidden {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden; 
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    white-space: nowrap;
-}
-
-/* Mobile layout control*/
-@media(max-width: 991px) {
-    .contact {
-        padding: 50px;
-    }
-
     .container {
-        flex-direction: column;
-    }
-
-    .container .contactInfo {
-        margin-bottom: 40px;
-    }
-
-    .container .contactInfo,
-    .contactForm {
-        width: 100%;
-    }
-}
-
-
-.container .contactInfo .box {
-    position: relative;
-    padding: 20px 0;
-    display: flex;
-}
-@media (max-width: 991px) {
-    .container .contactInfo .box {
+    flex-direction: column-reverse !important;
+  }
+    .container .contact-section-textInfo .box {
         margin-bottom: 20px;
     }
-}
-
-.form-message {
-  color: green;
-  margin-top: 1rem;
-  font-weight: 500;
-}
+} 
+ 
 
 
-#button {
-    border-radius: 5px;
-}
-
-
-.map-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px; /* or whatever fits your layout */
-  margin: 0 5%;
-  color: white;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.map-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 15px;
-}
-
-.truck-icon {
-  position: absolute;
-  top: 53.5%;   /* adjust this to match the truck location */
-  left: 50%;  /* adjust this to match the truck location */
-  transform: translate(-50%, -100%); /* Center the icon above the point */
-  width: 40px;
-  height: 40px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.truck-icon {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: translate(-50%, -100%) scale(1); }
-  50% { transform: translate(-50%, -100%) scale(1.1); }
-  100% { transform: translate(-50%, -100%) scale(1); }
-}
-
-
-.truck-note {
-  position: absolute;
-  top: 18%; /* Adjust as needed */
-  left: 30%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  max-width: 250px;
-  z-index: 3;
-  display: none; /* Hidden by default */
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}

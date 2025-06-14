@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,14 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles/contact.css">
 </head>
+
 <body>
+    <!-- <div class="socials">
+    <a href="https://instagram.com" aria-label="Instagram"><i
+    class="fa-brands fa-instagram"></i></a>
+    <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    -->
     <header>
         <a href="index.html">
             <img src="/logo-guyana-usa-theme.png" alt="Backyard Builds Logo" />
@@ -22,90 +30,77 @@
         </nav>
     </header>
     <main>
-        <p id="formMessage" class="form-message visually-hidden">Thanks for reaching out! We'll get back to you soon.</p>
-        <section class="contact" aria-labelledby="contact-heading">
-            <div class="content">
+        <section class="contact-section-text" aria-labelledby="contact-heading">
+                    <p id="formMessage" class="form-message visually-hidden">Thanks for reaching out! We'll get back to you soon.</p>
+
+
+            <div class="section-header">
                 <h2>Contact Us</h2>
-                <!-- <p>
-                Interested in our 2025 food truck for sale?
-                It’s an all-purpose mobile kitchen, outfitted with brand new equipment and ready to hit the road. Reach out with any questions we’re happy to help!
-                </p> -->
-                <p>
-                Interested in our custom built 2025 food truck for sale? Or have a truck you’d like transformed into your dream kitchen on wheels? Let’s make it happen reach out today!
-                </p>
+                <p>Interested in our custom built 2025 food truck for sale? Or have a truck you’d like transformed into
+                    your dream kitchen on wheels? Let’s make it happen reach out today!</p>
             </div>
+
             <div class="container">
-                    <!-- <div class="socials">
-                        <a href="https://instagram.com" aria-label="Instagram"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <div class="map-container">
+                    <h4>Food Truck Location</h4>
+                    <p>Orlando | Central Florida </p>
+                    <img src="/orlando-gps2.png" alt="Map of Orlando with general area of sale's location is marked."
+                        class="map-image">
+                    <img src="/tab-icons/blue-truck-icon.png" class="truck-icon" id="truckIcon"
+                        alt="Food Truck icon on map of Orlando" onclick="toggleTruckNote()">
+                    <div class="truck-note" id="truckNote">
+                        Built and sold independently by FoodTruck Backyard Builds.<br />
+                        Located in the Orlando area.<br />
+                        Get in touch today for more information!
                     </div>
-                    -->
-                    <div class="map-container">
-                        <h4>Location</h4>
-                        <p>Orlando | Central Florida </p>
-                        <img src="/orlando-gps2.png" alt="Map of Orlando with general area of sale's location is marked." class="map-image">
-                        
-                        
-                        <img src="/tab-icons/blue-truck-icon.png" class="truck-icon" id="truckIcon" alt="Food Truck icon on map of Orlando" onclick="toggleTruckNote()">
-                    
-                        <div class="truck-note" id="truckNote">
-                            Built and sold independently by FoodTruck Backyard Builds.<br />
-                            Located in the Orlando area.<br />
-                            Get in touch today for more information!
-                        </div>
-                    <script>
-                        const note = document.getElementById("truckNote");
-                        const icon = document.getElementById("truckIcon");
-
-                        function toggleTruckNote() {
-                            const isVisible = note.style.display === "block";
-                            note.style.display = isVisible ? "none" : "block";
-
-                            // Only add outside click listener when showing
-                            if (!isVisible) {
+                </div>
+                <script>
+                    /* Truck note logic for onclick on food truck map icon. */
+                    const note = document.getElementById("truckNote");
+                    const icon = document.getElementById("truckIcon");
+                    function toggleTruckNote() {
+                        const isVisible = note.style.display === "block";
+                        note.style.display = isVisible ? "none" : "block";
+                        if (!isVisible) {
                             document.addEventListener("click", handleOutsideClick);
-                            } else {
+                        } else {
                             document.removeEventListener("click", handleOutsideClick);
-                            }
                         }
-
-                        function handleOutsideClick(event) {
-                            if (!note.contains(event.target) && event.target !== icon) {
+                    }
+                    function handleOutsideClick(event) {
+                        if (!note.contains(event.target) && event.target !== icon) {
                             note.style.display = "none";
                             document.removeEventListener("click", handleOutsideClick);
-                            }
                         }
-                    </script>
-                    </div>
-                   
+                    }
+                </script>
 
-                <div class="contactForm">
-                    <form aria-label="Contact form">
-                        <h2>Send Message</h2>
-                        <div class="inputBox">
-                            <label for="name" class="visually-hidden">Name</label>
-                            <input type="text" id="name" name="name" required>
-                            <span>Name</span>
-                        </div>
-                        <div class="inputBox">
-                            <label for="email" class="visually-hidden">Email</label>
-                            <input type="email" id="email" name="email" required>
-                            <span>Email</span>
-                        </div>
-                        <div class="inputBox">
-                            <label for="message" class="visually-hidden">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                            <span>Type your message...</span>
-                        </div>
-                        <div class="inputBox">
-                            <input id="button" type="submit" value="Send">
-                        </div>
-                    </form>
-                </div>
+                <form aria-label="Contact form">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <label for="name" class="visually-hidden">Name</label>
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <span>Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <label for="email" class="visually-hidden">Email</label>
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <label for="message" class="visually-hidden">Message</label>
+                        <textarea style="height: 100px" id="message" name="message" required placeholder=" "></textarea>
+                        <span>Type your message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input id="button" type="submit" value="Send">
+                    </div>
+                </form>
             </div>
+
         </section>
     </main>
+
     <footer id="footer">
         <a href="index.html">
             <img src="/logo-guyana-usa-theme.png" alt="Backyard Builds Logo" />
@@ -120,13 +115,7 @@
             </nav>
         </div>
     </footer>
-     <script>
-            document.querySelector("form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            document.getElementById("formMessage").classList.remove("visually-hidden");
-            setTimeout(() => this.reset(), 500);
-            });
-        </script>
+
     <script type="module" src="scripts/contact.js"></script>
     <script src="https://kit.fontawesome.com/eb0b47a33f.js" crossorigin="anonymous"></script>
 </body>
