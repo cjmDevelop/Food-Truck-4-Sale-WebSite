@@ -14,9 +14,6 @@ scrap/
 # Environment secrets
 .env
 
-# Vite build output 
-dist/
-
 # Optional: local runtime logs / crash reports
 npm-debug.log*
 yarn-debug.log*
