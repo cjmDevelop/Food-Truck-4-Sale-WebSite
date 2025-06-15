@@ -1,26 +1,45 @@
-/* Pop-up message for successful completion of contact form. */
-document.querySelector("form").addEventListener("submit", function (e) {
+
+document.querySelector("form").addEventListener("submit", async function (e) {
     e.preventDefault();
     
     const form = this;
-    const message = document.getElementById("formMessage");
-    message.classList.remove("visually-hidden");
-    message.scrollIntoView({ behavior: "smooth", block: "center" });
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
     
-    setTimeout(() => {
-        form.reset();
-    }, 500);
+    const messageDiv = document.getElementById("formMessage");
+
+    try {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify({ name, email, message })
+        });
     
-    setTimeout(() => {
-        message.classList.add("visually-hidden");
-    }, 5000);
-});
+        const data = await res.json();
 
-document.getElementById("formMessage").scrollIntoView({ 
-    behavior: "smooth", 
-    block: "center" 
-});
+        if(data.success) {
+            messageDiv.textContent = "Thanks for reaching out! We'll get back to you soon";
+            messageDiv.classList.remove("visually-hidden");
+            form.reset();
+        } else {
+            messageDiv.textContent = "Something went wrong. Please try again."
+            messageDiv.classList.remove("visually-hidden");
+        }
 
+        messageDiv.scrollIntoView({behavior: "smooth", block: "center"});
+
+        setTimeout(() => {
+         messageDiv.classList.add("visually-hidden");
+        }, 5000);
+    } catch (err) {
+        console.error("Error submitting form:", err);
+        messageDiv.textContent = "Something went wrong. Please try again.";
+        messageDiv.classList.remove("visually-hidden");
+        messageDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+});
+    
 
 /* Truck note logic for onclick on food truck map icon. */
 const note = document.getElementById("truckNote");

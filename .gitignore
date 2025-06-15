@@ -1,11 +1,23 @@
+# Dependency directories
 node_modules/
 
+# System files
+.DS_Store
+
+# Local config 
 jsconfig.json
+*.log
 
-package-lock.json
-
-package.json
-
+# Personal dev folders
 scrap/
 
-.DS_Store
+# Environment secrets
+.env
+
+# Vite build output 
+dist/
+
+# Optional: local runtime logs / crash reports
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
