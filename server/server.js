@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const allowedOrigins = [
   'https://foodtruckbackyardbuilds.netlify.app',
   'https://www.foodtruckbackyardbuilds.com',
-  'foodtruckbackyardbuilds.com'
+  'https://foodtruckbackyardbuilds.com'
 ];
 
 
