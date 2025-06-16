@@ -43,7 +43,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Route to handle contact form
-app.post('https://food-truck-4-sale-contact-form-service.onrender.com', async (req, res) => {
+app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {

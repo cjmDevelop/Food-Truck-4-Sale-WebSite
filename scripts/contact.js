@@ -10,7 +10,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     const messageDiv = document.getElementById("formMessage");
 
     try {
-        const res = await fetch("https://food-truck-4-sale-contact-form-service.onrender.com", {
+        const res = await fetch("https://food-truck-4-sale-contact-form-service.onrender.com/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify({ name, email, message })
