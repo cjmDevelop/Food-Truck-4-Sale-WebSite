@@ -30,7 +30,7 @@ app.use(cors({
   }
 }));
 
-app.options('*', cors()); // Handle preflight requests
+
 app.use(express.json()); // Parse incoming JSON
 
 // Nodemailer setup
