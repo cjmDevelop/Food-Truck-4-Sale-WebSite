@@ -3,6 +3,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const dotenv = require('dotenv');
+// const path = require('path');
 
 dotenv.config();
 
@@ -40,6 +41,10 @@ app.post('/api/contact', async (req, res) => {
     console.error('Error sending email:', error);
     res.status(500).json({ success: false, message: 'Something went wrong.' });
   }
+});
+
+app.get('/', (req, res) => {
+  res.send('Backend is running');
 });
 
 app.listen(PORT, () => {
