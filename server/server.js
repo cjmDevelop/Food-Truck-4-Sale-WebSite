@@ -47,7 +47,7 @@ app.post('https://food-truck-4-sale-contact-form-service.onrender.com', async (r
   const { name, email, message } = req.body;
 
   const mailOptions = {
-    from: `"${name}" <${email}>`,
+    from: `${name} <${email}>`,
     to: process.env.EMAIL_USER,
     subject: 'New Contact Form Submission',
     text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
