@@ -88,7 +88,69 @@
             </nav>
         </div>
     </footer>
-    <script type="module" src="scripts/contact.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    
+    const form = this;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+    
+    const messageDiv = document.getElementById("formMessage");
+
+    try {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify({ name, email, message })
+        });
+    
+        const data = await res.json();
+
+        if(data.success) {
+            messageDiv.textContent = "Thanks for reaching out! We'll get back to you soon";
+            messageDiv.classList.remove("visually-hidden");
+            form.reset();
+        } else {
+            messageDiv.textContent = "Something went wrong. Please try again."
+            messageDiv.classList.remove("visually-hidden");
+        }
+
+        messageDiv.scrollIntoView({behavior: "smooth", block: "center"});
+
+        setTimeout(() => {
+         messageDiv.classList.add("visually-hidden");
+        }, 5000);
+    } catch (err) {
+        console.error("Error submitting form:", err);
+        messageDiv.textContent = "Something went wrong. Please try again.";
+        messageDiv.classList.remove("visually-hidden");
+        messageDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+});
+    
+
+/* Truck note logic for onclick on food truck map icon. */
+const note = document.getElementById("truckNote");
+const icon = document.getElementById("truckIcon");
+function toggleTruckNote() {
+    const isVisible = note.style.display === "block";
+    note.style.display = isVisible ? "none" : "block";
+    if (!isVisible) {
+        document.addEventListener("click", handleOutsideClick);
+    } else {
+        document.removeEventListener("click", handleOutsideClick);
+    }
+}
+function handleOutsideClick(event) {
+    if (!note.contains(event.target) && event.target !== icon) {
+        note.style.display = "none";
+        document.removeEventListener("click", handleOutsideClick);
+    }
+}
+    </script>
+    <!-- <script type="module" src="scripts/contact.js"></script> -->
     <script src="https://kit.fontawesome.com/eb0b47a33f.js" crossorigin="anonymous"></script>
 </body>
 </html>
