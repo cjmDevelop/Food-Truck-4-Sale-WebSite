@@ -3,16 +3,35 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const dotenv = require('dotenv');
-// const path = require('path');
+
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Allowed Origins
+const allowedOrigins = [
+  'https://foodtruckbackyardbuilds.netlify.app',
+  'https://www.foodtruckbackyardbuilds.com',
+  'foodtruckbackyardbuilds.com'
+];
+
+
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+app.options('*', cors()); // Handle preflight requests
+app.use(express.json()); // Parse incoming JSON
 
 // Nodemailer setup
 const transporter = nodemailer.createTransport({
@@ -38,8 +57,8 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ success: false, message: 'Something went wrong.' });
+    console.error('Yo an error sending email:', error);
+    res.status(500).json({ success: false, message: 'Something went wrong!' });
   }
 });
 
@@ -51,6 +70,18 @@ app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
+
+
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 app.use(cors({
   origin: ['https://www.foodtruckbackyardbuilds.com', 'foodtruckbackyardbuilds.netlify.app']
 }));
