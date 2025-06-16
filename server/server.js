@@ -50,3 +50,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
+app.use(cors({
+  origin: ['https://www.foodtruckbackyardbuilds.com', 'foodtruckbackyardbuilds.netlify.app']
+}));
