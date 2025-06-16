@@ -14,7 +14,7 @@ scrap/
 # Environment secrets
 .env
 
-/dist
+dist/
 
 
 # Optional: local runtime logs / crash reports
