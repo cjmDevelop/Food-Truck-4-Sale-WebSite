@@ -7,7 +7,7 @@
         content="Get in touch with Backyard Builds for custom food truck inquiries. Call, email, or use our contact form.">
     <link rel="icon" href="tab-icons/lightFoodTruckIcon.png">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="src/styles/contact.css">
 </head>
 <body>
     <!-- <div class="socials">
@@ -88,7 +88,7 @@
                 button.disabled = true;
                 button.value = "Sending...";
                 try {
-                    const res = await fetch("https://food-truck-4-sale-contact-form-service.onrender.com/contact", {
+                    const res = await fetch("https://food-truck-4-sale-contact-form-service.onrender.com/api/contact", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ name, email, message })

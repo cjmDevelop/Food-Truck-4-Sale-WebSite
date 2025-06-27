@@ -43,7 +43,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Route to handle contact form
-app.post('/contact', async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {
@@ -57,7 +57,7 @@ app.post('/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
-    console.error('Yo an error sending email:', error);
+    console.error('There was an error sending email:', error);
     res.status(500).json({ success: false, message: 'Something went wrong!' });
   }
 });
