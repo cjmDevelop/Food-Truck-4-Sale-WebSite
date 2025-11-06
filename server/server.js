@@ -1,9 +1,7 @@
 // server/server.js
 const express = require('express');
-const nodemailer = require('nodemailer');
 const cors = require('cors');
 const dotenv = require('dotenv');
-
 
 dotenv.config();
 
@@ -17,7 +15,6 @@ const allowedOrigins = [
   'https://foodtruckbackyardbuilds.com'
 ];
 
-
 // Middleware
 app.use(cors({
   origin: function (origin, callback) {
@@ -30,32 +27,36 @@ app.use(cors({
   }
 }));
 
-
 app.use(express.json()); // Parse incoming JSON
-
-// Nodemailer setup
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
 
 // Route to handle contact form
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
-  const mailOptions = {
-    from: `${name} <${email}>`,
-    to: process.env.EMAIL_USER,
-    subject: 'New Contact Form Submission',
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ success: true, message: 'Email sent successfully.' });
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
+      },
+      body: JSON.stringify({
+        from: 'onboarding@resend.dev', // Use this for testing, change later
+        to: email, // Change this to YOUR email where you want to receive messages
+        reply_to: email, // This sets the customer's email as reply-to
+        subject: `New Contact Form: ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      res.status(200).json({ success: true, message: 'Email sent successfully.' });
+    } else {
+      console.error('Resend API error:', data);
+      res.status(500).json({ success: false, message: 'Something went wrong!' });
+    }
   } catch (error) {
     console.error('There was an error sending email:', error);
     res.status(500).json({ success: false, message: 'Something went wrong!' });
@@ -69,6 +70,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-
-
-
