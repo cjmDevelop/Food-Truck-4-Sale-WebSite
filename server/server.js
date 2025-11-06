@@ -43,7 +43,7 @@ app.post('/api/contact', async (req, res) => {
       body: JSON.stringify({
         from: 'onboarding@resend.dev', // Using this for testing, may change later
         to: process.env.RECIPIENT_EMAIL, // my email
-        reply_to: email, // This sets the customer's email as reply-to
+        reply_to: `${name} <${email}>`, // This sets the customer's email as reply-to
         subject: `New Contact Form: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
       })
