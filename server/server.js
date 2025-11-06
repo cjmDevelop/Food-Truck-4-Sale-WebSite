@@ -41,8 +41,8 @@ app.post('/api/contact', async (req, res) => {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev', // Use this for testing, change later
-        to: email, // Change this to YOUR email where you want to receive messages
+        from: 'onboarding@resend.dev', // Using this for testing, may change later
+        to: process.env.RECIPIENT_EMAIL, // my email
         reply_to: email, // This sets the customer's email as reply-to
         subject: `New Contact Form: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
