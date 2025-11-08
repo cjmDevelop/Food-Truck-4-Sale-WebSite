@@ -151,6 +151,16 @@
             }
         }
     </script>
+    <script>
+        //Waking up backend on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            fetch('https://food-truck-4-sale-contact-form-service.onrender.com/', {
+                method: 'GET'
+            }).catch(() => {
+                //wake up server
+            })
+        })
+    </script>
     <script src="https://kit.fontawesome.com/eb0b47a33f.js" crossorigin="anonymous"></script>
 </body>
 </html>
